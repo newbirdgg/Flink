@@ -15,8 +15,8 @@ public class CarrierReduce implements ReduceFunction<CarrierEntity>{
     public CarrierEntity reduce(CarrierEntity carrierEntity, CarrierEntity t1) throws Exception {
         String carrier = carrierEntity.getCarrier();
         Long count1 = carrierEntity.getCount();
-
         Long count2 = t1.getCount();
+
         CarrierEntity result = new CarrierEntity();
         result.setCarrier(carrier);
         result.setCount(count1+count2);

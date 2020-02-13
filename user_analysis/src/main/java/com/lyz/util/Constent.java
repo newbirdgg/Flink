@@ -30,4 +30,15 @@ public class Constent {
     public static final String MOBILE_PARTTEN = "移动用户";
     public static final String UNICOM_PARTTEN = "联通用户";
     public static final String TELECOM_PARTTEN = "电信用户";
+
+    /**
+     * 邮箱运营商
+     */
+    public static final String OTHER_EMAIL_OPERATOR = "其他邮箱";
+    public static final String WANGYI_EMAIL_OPERATOR = "网易";
+    public static final String SOUHU_EMAIL_OPERATOR = "搜狐";
+    public static final String ALIYUN_EMAIL_OPERATOR = "阿里";
+    public static final String XINLANG_EMAIL_OPERATOR = "新浪";
+    public static final String QQ_EMAIL_OPERATOR = "QQ";
+
 }
