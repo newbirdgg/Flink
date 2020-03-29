@@ -10,6 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>user_analysis</module>
+        <module>registerServiceCenter</module>
+        <module>infoInService</module>
+        <module>common</module>
     </modules>
 
 

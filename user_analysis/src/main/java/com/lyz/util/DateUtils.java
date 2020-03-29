@@ -2,6 +2,8 @@ package com.lyz.util;
 
 import javafx.scene.input.DataFormat;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -41,5 +43,21 @@ public class DateUtils {
         }
 
         return yearDataType;
+    }
+
+    public static int getBetweenByStartAndEnd(String startTime,String endTime,String dateFormatString) throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat(dateFormatString);
+        Date start = dateFormat.parse(startTime);
+        Date end = dateFormat.parse(endTime);
+        Calendar startCalendar = Calendar.getInstance();
+        Calendar endCalendar = Calendar.getInstance();
+        startCalendar.setTime(start);
+        endCalendar.setTime(end);
+        int day = 0;
+        while (startCalendar.before(endCalendar)){
+            startCalendar.add(Calendar.DAY_OF_YEAR,1);
+            day++;
+        }
+        return day;
     }
 }

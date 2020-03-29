@@ -6,12 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common" />
+        <module name="infoInService" />
+        <module name="registerServiceCenter" />
         <module name="user_analysis" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="infoInService" options="-parameters" />
+      <module name="registerServiceCenter" options="-parameters" />
       <module name="user_analysis" options="-Xlint:all -Xpkginfo:always" />
     </option>
   </component>

@@ -4,11 +4,14 @@ import com.lyz.entity.ProdigalEntity;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.flink.api.common.functions.MapFunction;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- *  @Author: liyuzhan
- *  @classDesp： 败家指数map
- *  @Date: 2020/2/13 21:33
- *  @Email: 1031759184@qq.com
+ * @Author: liyuzhan
+ * @classDesp： 败家指数map
+ * @Date: 2020/2/13 21:33
+ * @Email: 1031759184@qq.com
  */
 public class ProdigalMap implements MapFunction<String, ProdigalEntity> {
     @Override
@@ -31,6 +34,20 @@ public class ProdigalMap implements MapFunction<String, ProdigalEntity> {
         String refundAmount = orderInfos[11];
         String num = orderInfos[12];
 
-        return null;
+        ProdigalEntity prodigal = new ProdigalEntity();
+        prodigal.setUserId(userId);
+        prodigal.setCreateTime(createTime);
+        prodigal.setAmount(amount);
+        prodigal.setPayType(payType);
+        prodigal.setPayTime(payTime);
+        prodigal.setCouponAmount(couponAmount);
+        prodigal.setPayStatus(payStatus);
+        prodigal.setTotalAmount(totalAmount);
+        prodigal.setRefundAmount(refundAmount);
+        String groupField = "prodigal == " +userId;
+        prodigal.setGroupField(groupField);
+        List<ProdigalEntity> list = new ArrayList<>();
+        list.add(prodigal);
+        return prodigal;
     }
 }
